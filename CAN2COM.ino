@@ -1,8 +1,8 @@
 #include <mcp_can.h>
 #include <SPI.h>
 
-#include "settings_mazda_cx5.h"
-//#include "settings_volvo_xc70.h"
+//#include "settings_mazda_cx5.h"
+#include "settings_volvo_xc70.h"
 
 
 long unsigned int rxId;
@@ -28,7 +28,7 @@ void setup()
   Serial.begin(115200);
   
   // Initialize MCP2515 running at 16MHz with a baudrate of 125kb/s and the masks and filters disabled.
-  if(CAN0.begin(MCP_ANY, CAN_SPEED, MCP_16MHZ) == CAN_OK) 
+  if(CAN0.begin(MCP_ANY, CAN_SPEED, MCP_8MHZ) == CAN_OK) 
      {
         Serial.println("\n\nMCP2515 Initialized Successfully!");
         ok=1;
